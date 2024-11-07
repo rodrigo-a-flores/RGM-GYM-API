@@ -6,7 +6,7 @@ export const validateUserData = (req, res, next) => {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(correo)) {
+    if (!emailRegex.test(email)) {
         return res.status(400).json({ success: false, message: 'Correo electrónico no válido' });
     }
 

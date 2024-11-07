@@ -16,19 +16,11 @@ User.init({
     password: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    created_at: {
-        type: DataTypes.DATE,
-        allowNull: false
-    },
-    updated_at: {
-        type: DataTypes.DATE,
-        allowNull: false
     }
 },{
     sequelize: config,
     modelName: 'users',
-    timestamps: true
+    timestamps: false
 });
 
 export default User;
