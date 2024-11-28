@@ -37,10 +37,10 @@ export const login = async (req, res) => {
         }
 
         const token = jwt.sign({ userId: user.id_usuario }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.cookie('token', token, {
-            httpOnly: true,
-            maxAge: 3600000,
-            sameSite: 'Strict'
+        res.cookie('authToken', token, {
+            httpOnly: false,
+            maxAge: 60 * 60 * 1000,
+            sameSite: 'none'
         });
 
         res.status(200).json({ data: user.email, success: true });
